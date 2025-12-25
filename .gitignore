@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/Cloud_book-backend/node_modules
+/.env
 /.pnp
 .pnp.js
 

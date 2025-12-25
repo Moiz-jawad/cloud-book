@@ -1,0 +1,76 @@
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Glassmorphic card */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    /* slightly brighter */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    color: #fff;
+    /* ensures text inside is white */
+    padding: 1.2rem 1.4rem;
+}
+
+.glass:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-header h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    color: #111111;
+
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #1f304c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.note-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #111111;
+    /* brighter for readability */
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: #fff;
+    /* visible on dark backgrounds */
+}
+
+.empty-state .emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}

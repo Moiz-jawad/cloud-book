@@ -1,0 +1,76 @@
+/* Background */
+.home-wrapper {
+    background: linear-gradient(135deg, #f4f6f8, #e9edf3);
+}
+
+/* Hero badge */
+.hero-badge {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+/* Glassmorphism card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+}
+
+/* Hover animation */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in-delayed {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating button */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0d6efd;
+    color: white;
+    font-size: 32px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 15px 35px rgba(13, 110, 253, 0.4);
+}

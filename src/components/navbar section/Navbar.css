@@ -1,0 +1,36 @@
+/* Base nav link */
+.nav-link {
+  padding: 0.5rem 1.5rem !important;
+  transition: all 0.3s ease;
+  /* smooth animation */
+  position: relative;
+  /* color: #edededc5 !important; */
+}
+
+/* Hover color change */
+.nav-link:hover {
+  color: #fff !important;
+  /* golden highlight */
+}
+
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: grey;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Option 2: background highlight (if you prefer a pill effect) */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
