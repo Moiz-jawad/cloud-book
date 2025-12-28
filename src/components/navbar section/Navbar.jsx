@@ -1,18 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./Navbar.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import AuthContext from "../../context/authContext";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { isAuthenticated, user, logout } = useContext(AuthContext);
+
   useEffect(() => {
-    console.log(location.pathname);
+    // Route change side‑effects could go here if needed
   }, [location]);
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            Cloud Book
+            CloudBook
           </Link>
           <button
             className="navbar-toggler"
@@ -49,6 +59,34 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
+
+            <div className="ms-auto d-flex align-items-center gap-2">
+              {!isAuthenticated ? (
+                <>
+                  <Link to="/login">
+                    <button className="btn btn-dark text-muted mx-1">
+                      Login
+                    </button>
+                  </Link>
+                  <Link to="/signup">
+                    <button className="btn btn-info text-dark">Signup</button>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <span className="fw-semibold text-muted small me-2">
+                    {user?.name ? `Hi, ${user.name}` : "Logged in"}
+                  </span>
+                  <button
+                    className="btn btn-outline-danger btn-sm"
+                    type="button"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </nav>

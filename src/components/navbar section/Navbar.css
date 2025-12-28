@@ -1,36 +1,48 @@
+/* Glassy navbar that blends with the global background */
+.navbar {
+  background: rgba(15, 23, 42, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* Base nav link */
 .nav-link {
-  padding: 0.5rem 1.5rem !important;
-  transition: all 0.3s ease;
-  /* smooth animation */
   position: relative;
-  /* color: #edededc5 !important; */
+  padding: 0.4rem 1.4rem !important;
+  color: rgba(226, 232, 240, 0.8) !important;
+  transition: color 0.25s ease, background-color 0.25s ease;
 }
-
-/* Hover color change */
-.nav-link:hover {
-  color: #fff !important;
-  /* golden highlight */
-}
-
 
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 0.15rem;
   height: 2px;
-  background-color: grey;
-  transition: width 0.3s ease;
+  border-radius: 999px;
+  background: linear-gradient(65deg, #fff, #e5e7eb89, rgba(59, 140, 210, 0.11));
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
-/* Option 2: background highlight (if you prefer a pill effect) */
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+/* Hover / active state */
+.nav-link:hover,
+.nav-link.active {
+  color: #e5e7eb !important;
+  background-color: rgba(15, 23, 42, 0.75);
+  border-radius: 999px;
 }

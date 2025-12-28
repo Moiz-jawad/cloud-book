@@ -2,6 +2,7 @@ const express = require("express");
 const mongoDb = require("./init/mongoDb");
 const { authRoute, notesRoute } = require("./Routes");
 const { config } = require("dotenv");
+const cors = require("cors");
 
 const port = 7000;
 
@@ -11,6 +12,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use("/api/v1/auth", authRoute);

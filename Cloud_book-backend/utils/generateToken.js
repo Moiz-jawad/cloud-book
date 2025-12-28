@@ -11,7 +11,9 @@ const generateToken = (user) => {
       email: user.email,
     },
     jwtSecret,
-    { expiresIn: "3d" }
+    {
+      expiresIn: "7d", // token valid for 7 days; adjust as needed
+    }
   );
 };
 

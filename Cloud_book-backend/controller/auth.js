@@ -73,13 +73,13 @@ const getUser = async (req, res, next) => {
     const id = req.user._id;
     const user = await User.findById(id).select("-password");
     if (!user) {
-      res.status(404).json({
+      return res.status(404).json({
         code: 404,
         status: false,
         message: "user not found!",
       });
     }
-    res.status(200).json({
+    return res.status(200).json({
       code: 200,
       status: true,
       message: "Get user data successfully",

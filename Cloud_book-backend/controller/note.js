@@ -52,7 +52,7 @@ const getNote = async (req, res, next) => {
 
 const getNotes = async (req, res, next) => {
   try {
-    const note = await Note.find({}).populate("user", "name email");
+    const note = await Note.find({ user: req.user._id }).populate("user", "name email");
 
     return res.status(200).json({
       code: 200,
@@ -98,7 +98,8 @@ const updateNote = async (req, res, next) => {
 const deleteNote = async (req, res, next) => {
   try {
     const noteId = req.params.id;
-    const note = await Note.findByIdAndDelete(noteId);
+    // Ensure user can only delete their own note
+    const note = await Note.findOneAndDelete({ _id: noteId, user: req.user._id });
 
     if (!note) {
       return res.status(404).json({

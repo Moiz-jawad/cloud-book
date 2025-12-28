@@ -1,0 +1,31 @@
+/* Minimal glass alert that plays nicely with the dark background */
+.alert-animated {
+    border-radius: 999px;
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    transform: translateY(-8px);
+    opacity: 0;
+    transition:
+        opacity 0.28s ease,
+        transform 0.28s ease;
+}
+
+/* Enter */
+.alert-animated.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Exit */
+.alert-animated.hide {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.alert-animated svg {
+    font-size: 1.05rem;
+}

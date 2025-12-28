@@ -1,44 +1,13 @@
 .about-wrapper {
-    background: linear-gradient(135deg, #f4f6f8, #e9edf3);
+    padding-block: 3.5rem;
 }
 
 .about-badge {
-    background: rgba(25, 135, 84, 0.1);
-    color: #198754;
+    background: rgba(22, 163, 74, 0.18);
+    color: #bbf7d0;
     padding: 8px 16px;
     border-radius: 999px;
     font-weight: 500;
-}
-
-/* Reuse animations & glass style */
-.glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 16px;
-}
-
-.hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
-.fade-in {
-    animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
