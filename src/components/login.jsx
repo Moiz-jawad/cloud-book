@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../context/authContext";
 
 const Login = () => {
@@ -117,9 +117,9 @@ const Login = () => {
             </div>
 
             <div className="text-center mt-3">
-              <a href="/signup" className="small text-muted">
+              <Link to="/signup" className="small text-muted">
                 Create a new account
-              </a>
+              </Link>
             </div>
           </form>
         </div>

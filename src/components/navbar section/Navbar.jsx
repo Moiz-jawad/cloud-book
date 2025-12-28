@@ -64,12 +64,14 @@ const Navbar = () => {
               {!isAuthenticated ? (
                 <>
                   <Link to="/login">
-                    <button className="btn btn-dark text-muted mx-1">
+                    <button className="d-none btn btn-dark text-muted mx-1">
                       Login
                     </button>
                   </Link>
                   <Link to="/signup">
-                    <button className="btn btn-info text-dark">Signup</button>
+                    <button className="d-none btn btn-info text-dark">
+                      Signup
+                    </button>
                   </Link>
                 </>
               ) : (
